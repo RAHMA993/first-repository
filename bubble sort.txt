@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int arr[50], x, no, lowest_no, i, j;
+    printf("Please Enter number of array: ");
+    scanf("%d", &no);
+    printf("Please Enter elements of array:\n");
+    for (x = 0; x < no; x++) {
+        scanf("%d", &arr[x]);
+    }
+    for (i = 0; i < no-1; i++) {
+        for (j = 0; j < no-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    printf("The sorted array is:\n");
+    for (x = 0; x < no; x++) {
+        printf("%d ", arr[x]);
+    }
+    printf("\n");
+    return 0;
+}
